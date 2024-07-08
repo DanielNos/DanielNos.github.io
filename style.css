@@ -1,15 +1,53 @@
+:root {
+    --background-light: #ffffff;
+    --background-dark: #121212;
+    --text-light: #000000;
+    --text-dark: #ffffff;
+    --box-background-light: #f0f0f0;
+    --box-background-dark: #1e1e1e;
+    --transition-duration: 0.3s;
+}
+
 body {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+    font-family: monospace;
     margin: 0;
     padding: 0;
+    font-size: 1.2em;
+}
+
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.topbar {
+    padding: 5px 5px 0 5px;
+}
+
+.topbar a {
+    margin-right: 0;
+}
+
+.topbar a i {
+    color: var(--text-light);
+    font-size: 1.2em;
+}
+
+body.dark-mode .topbar a i {
+    color: var(--text-dark);
+}
+
+.topbar a:hover {
+    text-decoration: none;
 }
 
 header {
@@ -23,10 +61,14 @@ h1 {
 }
 
 .project {
-    background-color: #1e1e1e;
+    background-color: var(--box-background-light);
     padding: 20px;
     border-radius: 8px;
     margin-bottom: 20px;
+}
+
+body.dark-mode .project {
+    background-color: var(--box-background-dark);
 }
 
 .project h3 {
@@ -41,7 +83,7 @@ footer {
     text-align: center;
     margin-top: 50px;
     padding: 20px;
-    border-top: 1px solid #333;
+    border-top: 1px solid #333000;
 }
 
 a {
@@ -62,5 +104,41 @@ a:hover {
 
 i {
     margin: 2px;
-    font-size: 200%;
+    font-size: 2rem;
+}
+
+.theme-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color var(--transition-duration), box-shadow var(--transition-duration);
+}
+
+.theme-toggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#sun-icon {
+    color: #000000;
+}
+
+#moon-icon {
+    color: #ffffff;
+    display: none;
+}
+
+body.dark-mode #moon-icon {
+    display: block;
+}
+
+body.dark-mode #sun-icon {
+    display: none;
 }
