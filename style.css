@@ -31,6 +31,7 @@ body.dark-mode {
 
 .topbar {
     padding: 5px 5px 0 5px;
+    display: inline-flex;
 }
 
 .topbar a {
@@ -102,8 +103,8 @@ a:hover {
     align-items: center;
 }
 
-i {
-    margin: 2px;
+.languages i {
+    margin: 0 8px;
     font-size: 2rem;
 }
 
