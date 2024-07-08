@@ -143,3 +143,8 @@ body.dark-mode #moon-icon {
 body.dark-mode #sun-icon {
     display: none;
 }
+
+.tag {
+    float:right;
+    font-weight: bold;
+}
