@@ -123,6 +123,10 @@ a:hover {
     transition: background-color var(--transition-duration), box-shadow var(--transition-duration);
 }
 
+.theme-toggle i {
+    font-size: 1.5rem;
+}
+
 .theme-toggle:hover {
     background-color: rgba(0, 0, 0, 0.1);
 }
