@@ -3,6 +3,8 @@
     --background-dark: #121212;
     --text-light: #000000;
     --text-dark: #ffffff;
+    --text-color-light: #00a1c9;
+    --text-color-dark: #00ccff;
     --box-background-light: #f0f0f0;
     --box-background-dark: #1e1e1e;
     --transition-duration: 0.3s;
@@ -16,6 +18,14 @@ body {
     margin: 0;
     padding: 0;
     font-size: 1.2em;
+}
+
+a {
+    color: var(--text-color-light);
+}
+
+body.dark-mode a {
+    color: var(--text-color-dark);
 }
 
 body.dark-mode {
@@ -88,7 +98,6 @@ footer {
 }
 
 a {
-    color: #00a7d1;
     text-decoration: none;
     margin-right: 10px;
 }
@@ -149,6 +158,6 @@ body.dark-mode #sun-icon {
 }
 
 .tag {
-    float:right;
+    float: right;
     font-weight: bold;
 }
