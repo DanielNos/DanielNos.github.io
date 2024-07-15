@@ -20,6 +20,11 @@ body {
     font-size: 1.2em;
 }
 
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
 a {
     color: var(--text-color-light);
 }
@@ -28,9 +33,12 @@ body.dark-mode a {
     color: var(--text-color-dark);
 }
 
-body.dark-mode {
-    background-color: var(--background-dark);
-    color: var(--text-dark);
+i {
+    color: var(--text-color-light); 
+}
+
+body.dark-mode i {
+    color: var(--text-color-dark);
 }
 
 .container {
