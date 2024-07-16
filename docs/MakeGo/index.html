@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
+<html lang="en" data-bs-theme="auto">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
         <link href="css/solid.min.css" rel="stylesheet">
         <link href="css/v4-font-face.min.css" rel="stylesheet">
         <link href="css/base.css" rel="stylesheet">
-        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" disabled>
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
@@ -51,10 +51,40 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item dropdown">
+                              <button id="theme-menu" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme" class="nav-link dropdown-toggle">
+                                <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                <span class="d-lg-none ms-2">Toggle theme</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end">
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                                    <i class="fa-solid fa-sun fa-fw"></i>
+                                    <span class="ms-2">Light</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                                    <i class="fa-solid fa-moon fa-fw"></i>
+                                    <span class="ms-2">Dark</span>
+                                    <i class="fa-solid fa-check ms-auto d-none"></i>
+                                  </button>
+                                </li>
+                                <li>
+                                  <button class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="true">
+                                    <i class="fa-solid fa-circle-half-stroke fa-fw"></i>
+                                    <span class="ms-2">Auto</span>
+                                    <i class="fa-solid fa-check ms-auto"></i>
+                                  </button>
+                                </li>
+                              </ul>
+                            </li>
                     </ul>
                 </div>
             </div>
         </div>
+        <script src="js/darkmode.js"></script>
 
         <div class="container">
             <div class="row">
@@ -73,6 +103,18 @@
               <ul class="nav flex-column">
             <li class="nav-item" data-bs-level="2"><a href="#installation" class="nav-link">Installation</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#installing-binary" class="nav-link">Installing Binary</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#windows" class="nav-link">Windows</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#installing-package" class="nav-link">Installing Package</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#quick-start" class="nav-link">Quick Start</a>
@@ -81,10 +123,38 @@
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#commands" class="nav-link">Commands</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#usage" class="nav-link">Usage</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#actions" class="nav-link">Actions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#flags" class="nav-link">Flags</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#config-file" class="nav-link">Config File</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="3"><a href="#application" class="nav-link">application</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#maintainer" class="nav-link">maintainer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#build" class="nav-link">build</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="3"><a href="#deb-rpm-pkg" class="nav-link">deb, rpm, pkg</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
             <li class="nav-item" data-bs-level="2"><a href="#how-to-build" class="nav-link">How to Build</a>
@@ -419,5 +489,5 @@ architectures = [ &quot;amd64&quot; ]
 
 <!--
 MkDocs version : 1.6.0
-Build Date UTC : 2024-07-16 14:14:39.064175+00:00
+Build Date UTC : 2024-07-16 14:50:06.400093+00:00
 -->
