@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="None">
+        
+        
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <title>MakeGo</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body class="homepage">
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href=".">MakeGo</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="." class="nav-link active" aria-current="page">Documentation</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/DanielNos/MakeGo" class="nav-link">GitHub</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/DanielNos/MakeGo/releases" class="nav-link">Download</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#makego" class="nav-link">MakeGo</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#installation" class="nav-link">Installation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#quick-start" class="nav-link">Quick Start</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#commands" class="nav-link">Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#config-file" class="nav-link">Config File</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#how-to-build" class="nav-link">How to Build</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="makego">MakeGo</h1>
+<p>MakeGo is a simple tool for compilation and packaging of Go projects. It uses a single TOML configuration file to automate the build process and package for all major Linux systems.</p>
+<h2 id="installation">Installation</h2>
+<p>MakeGo can be downloaded as a binary or as a package from the <a href="https://github.com/DanielNos/MakeGo/releases">Releases</a> page.</p>
+<h3 id="installing-binary">Installing Binary</h3>
+<h4 id="linux">Linux</h4>
+<ol>
+<li>Download the correct MakeGo binary for your system. </li>
+<li>Move the package to /usr/local/bin: <code>mv [binary name] /usr/local/bin/makego</code></li>
+</ol>
+<h3 id="windows">Windows</h3>
+<ol>
+<li>Download the correct MakeGo binary for your system.</li>
+<li>Move it to the folder where it should be installed.</li>
+<li>Open the <strong>Edit the system environment variables</strong> application.</li>
+<li>Go to the <strong>Advanced</strong> tab and click on the <strong>Environment Variables...</strong> button.</li>
+<li>Find the <strong>Path</strong> environment variable and click <strong>Edit</strong>.</li>
+<li>Click <strong>New</strong> and write the path to your installation folder to the new Field.</li>
+<li>Click <strong>OK</strong>. You may need to restart your terminal or system to apply this change.</li>
+</ol>
+<h3 id="installing-package">Installing Package</h3>
+<ol>
+<li>Download the correct MakeGo package for your package manager.</li>
+<li>Install it using the package manager:<ul>
+<li><strong>APT</strong>: <code>sudo apt install [package path]</code></li>
+<li><strong>DNF</strong>: <code>sudo dnf install [package path]</code></li>
+<li><strong>PacMan</strong>: <code>sudo pacman -S [package path]</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="quick-start">Quick Start</h2>
+<ol>
+<li>Create a new configuration file: <code>makego new</code></li>
+<li>Edit the make.toml file to suit your needs.</li>
+<li>Build your project: <code>makego</code></li>
+</ol>
+<h2 id="commands">Commands</h2>
+<h3 id="usage">Usage</h3>
+<p><code>makego [action [argument]] [config file]</code></p>
+<h3 id="actions">Actions</h3>
+<p>Default action is <code>all</code>.</p>
+<ul>
+<li><code>new [template]</code> - Creates a new config from a template. Templates: normal, all, empty</li>
+<li><code>clean</code> or <code>cln</code> - Removes all build and package directories.</li>
+<li><code>binary</code> or <code>bin</code> - Builds project binaries.</li>
+<li><code>package</code> or <code>pkg</code> - Builds project binaries and packages them.</li>
+<li><code>all</code> - Does the same as package.</li>
+<li><code>help</code> - Shows help.</li>
+</ul>
+<h3 id="flags">Flags</h3>
+<ul>
+<li><code>--help</code> or <code>-h</code> - Shows help.</li>
+<li><code>--version</code> or <code>-v</code> - Shows version.</li>
+<li><code>--time</code> or <code>-t</code> - Prints timestamps for log messages.</li>
+<li><code>new [template]</code> - Creates a new config from a template. Templates: normal, all, empty.</li>
+<li><code>clean</code> or <code>cln</code> - Removes all build and package directories.</li>
+<li><code>binary</code> or <code>bin</code> - Builds project binaries.</li>
+<li><code>package</code> or <code>pkg</code> - Builds project binaries and packages them.</li>
+<li><code>all</code> - Does the same as package.</li>
+<li><code>help</code> - Shows help.</li>
+</ul>
+<h2 id="config-file">Config File</h2>
+<p>This is how the default make.toml template looks:</p>
+<pre><code class="language-toml">[application]
+name = &quot;app&quot;
+version = &quot;1.0.0&quot;
+description = &quot;My cool application.&quot;
+long_description = &quot;My cool application.&quot;
+url = &quot;https://github.com/Username/app&quot;
+license = &quot;&quot;
+
+[maintainer]
+name = &quot;Name Surname&quot;
+email = &quot;name.surname@email.com&quot;
+
+[build]
+target = &quot;.&quot;
+flags = &quot;-ldflags=\&quot;-w -s\&quot;&quot;
+platforms = [ &quot;linux/amd64&quot;, &quot;windows/amd64&quot;, &quot;darwin/arm64&quot; ]
+
+[deb]
+package = false
+architectures = [ &quot;amd64&quot; ]
+
+[rpm]
+package = false
+build_src = true
+architectures = [ &quot;amd64&quot; ]
+
+[pkg]
+package = true
+architectures = [ &quot;amd64&quot; ]
+</code></pre>
+<h3 id="application"><code>application</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name of the application.</td>
+</tr>
+<tr>
+<td>version</td>
+<td>string</td>
+<td>The version of the application. Should be either <code>X.X.X</code> or <code>X.X</code>.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>A short description of your application.</td>
+</tr>
+<tr>
+<td>long_description</td>
+<td>string</td>
+<td>A long description of your application. Used only in RPM packages.</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>The url of the main web page for your application.</td>
+</tr>
+<tr>
+<td>license</td>
+<td>string</td>
+<td>A short name of your project's license (MIT, AGPLv2, ...). Should not contain spaces.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="maintainer"><code>maintainer</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>The name and surname of the project maintainer.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>string</td>
+<td>The email address of the project maintainer.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="build"><code>build</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td>string</td>
+<td>Build target when running <code>go build [target]</code>.</td>
+</tr>
+<tr>
+<td>flags</td>
+<td>string</td>
+<td>Build flags.</td>
+</tr>
+<tr>
+<td>platforms</td>
+<td>string array</td>
+<td>Build platforms in format <code>[GOOS]/[GOARCH]</code>. List of all operating systems and architectures can be found on <a href="https://go.dev/doc/install/source#environment">go.dev/doc</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deb-rpm-pkg"><code>deb</code>, <code>rpm</code>, <code>pkg</code></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>package</td>
+<td>bool</td>
+<td>Should the application be packaged for this packaging system.</td>
+</tr>
+<tr>
+<td>*build_src</td>
+<td>bool</td>
+<td>Should the source package be build.</td>
+</tr>
+<tr>
+<td>architectures</td>
+<td>string array</td>
+<td>Which architectures should be packaged.</td>
+</tr>
+</tbody>
+</table>
+<p>* Only in RPM config.</p>
+<h2 id="how-to-build">How to Build</h2>
+<ol>
+<li>Clone or download the <a href="https://github.com/DanielNos/MakeGo">repository</a>.</li>
+<li>Build using<ul>
+<li><strong>MakeGo</strong>: Run <code>makego</code></li>
+<li><strong>Go</strong>: Run <code>go get &amp;&amp; go build -ldflags="-w -s" .</code></li>
+</ul>
+</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = ".",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="js/base.js"></script>
+        <script src="search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
+
+<!--
+MkDocs version : 1.6.0
+Build Date UTC : 2024-07-16 10:27:59.024825+00:00
+-->
