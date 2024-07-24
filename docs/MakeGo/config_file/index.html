@@ -389,9 +389,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deb-rpm-pkg-appimage" class="md-nav__link">
+  <a href="#deb-pkg" class="md-nav__link">
     <span class="md-ellipsis">
-      deb, rpm, pkg, appimage
+      deb, pkg
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpm" class="md-nav__link">
+    <span class="md-ellipsis">
+      rpm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appimage" class="md-nav__link">
+    <span class="md-ellipsis">
+      appimage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supported-architectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported Architectures
     </span>
   </a>
   
@@ -501,6 +528,7 @@
 </span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a><span class="k">[appimage]</span>
 </span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a><span class="n">package</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 </span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="n">architectures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;amd64&quot;</span><span class="w"> </span><span class="p">]</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="n">custom_apprun</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
 </span></code></pre></div>
 <h2 id="application"><code>application</code><a class="headerlink" href="#application" title="Permanent link">#</a></h2>
 <table>
@@ -625,7 +653,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="deb-rpm-pkg-appimage"><code>deb</code>, <code>rpm</code>, <code>pkg</code>, <code>appimage</code><a class="headerlink" href="#deb-rpm-pkg-appimage" title="Permanent link">#</a></h2>
+<h2 id="deb-pkg"><code>deb</code>, <code>pkg</code><a class="headerlink" href="#deb-pkg" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -641,7 +669,29 @@
 <td>Should the application be packaged for this packaging system.</td>
 </tr>
 <tr>
-<td>*build_src</td>
+<td>architectures</td>
+<td>string array</td>
+<td>Which architectures should be packaged.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="rpm"><code>rpm</code><a class="headerlink" href="#rpm" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>package</td>
+<td>bool</td>
+<td>Should the application be packaged for this packaging system.</td>
+</tr>
+<tr>
+<td>build_src</td>
 <td>bool</td>
 <td>Should the source package be built.</td>
 </tr>
@@ -652,8 +702,34 @@
 </tr>
 </tbody>
 </table>
-<p>* Only in RPM config.</p>
-<p><strong>Supported Architectures:</strong></p>
+<h2 id="appimage"><code>appimage</code><a class="headerlink" href="#appimage" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>package</td>
+<td>bool</td>
+<td>Should the application be packaged for this packaging system.</td>
+</tr>
+<tr>
+<td>architectures</td>
+<td>string array</td>
+<td>Which architectures should be packaged.</td>
+</tr>
+<tr>
+<td>custom_apprun</td>
+<td>string</td>
+<td>Path to custom AppRun. If left empty, official default AppRun will be used.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="supported-architectures">Supported Architectures<a class="headerlink" href="#supported-architectures" title="Permanent link">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -663,7 +739,7 @@
 </thead>
 <tbody>
 <tr>
-<td>deb, rpm, appimage</td>
+<td>deb, RPM, AppImage</td>
 <td>amd64, 386, arm, arm64</td>
 </tr>
 <tr>
@@ -672,6 +748,7 @@
 </tr>
 </tbody>
 </table>
+<p>It's possible to package other architectures that aren't specified here, but they are either unsupported by the packaging system or not tested.</p>
 
 
 
