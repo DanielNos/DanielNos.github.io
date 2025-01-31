@@ -169,3 +169,11 @@ body.dark-mode #sun-icon {
     float: right;
     font-weight: bold;
 }
+
+.highlight {
+    color: var(--text-color-light);
+}
+
+.highlight.dark-mode {
+    color: var(--text-color-dark);
+}
